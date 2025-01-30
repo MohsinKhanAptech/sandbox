@@ -1,0 +1,29 @@
+html,
+body {
+  min-width: 100dvw;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(245, 245, 245);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#resolutionContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem;
+}
