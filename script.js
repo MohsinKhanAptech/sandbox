@@ -69,7 +69,7 @@ function populateTable() {
   for (let i = 0; i < rowsCount; i++) {
     let columns = [];
     for (let j = 0; j < columnsCount; j++) {
-      // the chance of cell being alive is 50/2/2 = 12.5%
+      // the chance of cell being active is 50/2/2 = 12.5%
       if (getRandomCellState() && getRandomCellState()) {
         columns.push(getRandomCellState());
       } else {
@@ -78,20 +78,6 @@ function populateTable() {
     }
     rows.push(columns);
   }
-
-  // single line of sand on top for testing.
-
-  //for (let i = 0; i < rowsCount; i++) {
-  //  let columns = [];
-  //  for (let j = 0; j < columnsCount; j++) {
-  //    if (i === 0) {
-  //      columns.push(1);
-  //    } else {
-  //      columns.push(0);
-  //    }
-  //  }
-  //  rows.push(columns);
-  //}
 }
 
 //
@@ -166,8 +152,6 @@ function progressGeneration() {
       }
     });
   }
-
-  //inactiveCellsCount = cellsCount - activeCellsCount;
 
   drawBackground();
   drawTable();
