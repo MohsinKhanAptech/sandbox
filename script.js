@@ -173,6 +173,49 @@ function progressGeneration() {
   drawTable();
 }
 
+// mouse events
+
+let x, y;
+let interval;
+let pressed = false;
+
+canvas.addEventListener("mousedown", (e) => {
+  x = e.offsetX;
+  y = e.offsetY;
+  pressed = true;
+
+  activateCell(x, y);
+
+  interval = setInterval(() => {
+    activateCell(x, y);
+  }, intervalDelay);
+});
+
+canvas.addEventListener("mousemove", (e) => {
+  if (pressed) {
+    x = e.offsetX;
+    y = e.offsetY;
+
+    activateCell(x, y);
+  }
+});
+
+window.addEventListener("mouseup", (e) => {
+  x = e.offsetX;
+  y = e.offsetY;
+  pressed = false;
+
+  clearInterval(interval);
+});
+
+function activateCell(x, y) {
+  let rowIndex, columnIndex;
+  rowIndex = Math.floor(y / cellSize);
+  columnIndex = Math.floor(x / cellSize);
+
+  rows[rowIndex][columnIndex] = 1;
+}
+
 //
 // Utility functions
 //
