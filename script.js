@@ -20,6 +20,10 @@ let inactiveCellsCount = cellsCount - activeCellsCount;
 
 let rows = [];
 
+// Colors
+let backgroundColor = "rgba(60, 60, 60, 1)";
+let sandColor = "rgba(194, 178, 128, 1)";
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -38,7 +42,7 @@ main();
 
 //
 function drawBackground() {
-  ctx.fillStyle = "rgba(60,60,60,1)";
+  ctx.fillStyle = backgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -51,11 +55,14 @@ function drawCell(x, y, size = cellSize, radius = cellRadius) {
 
 //
 function drawTable() {
-  ctx.fillStyle = "rgba(194, 178, 128,1)";
   rows.forEach((row, rowIndex) => {
     row.forEach((column, colIndex) => {
       if (column) {
         activeCellsCount++;
+        ctx.fillStyle = sandColor;
+        drawCell(colIndex * cellSize, rowIndex * cellSize);
+      } else {
+        ctx.fillStyle = backgroundColor;
         drawCell(colIndex * cellSize, rowIndex * cellSize);
       }
     });
@@ -153,7 +160,6 @@ function progressGeneration() {
     });
   }
 
-  drawBackground();
   drawTable();
 }
 
