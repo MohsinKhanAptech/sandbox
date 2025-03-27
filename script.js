@@ -139,13 +139,13 @@ function progressGeneration() {
       if (currentCell) {
         if (rows[rowIndex + 1]) {
           if (rows[rowIndex + 1][colIndex - 0] === 0) {
-            rows[rowIndex][colIndex] = 0; // currentCell
+            rows[rowIndex - 0][colIndex - 0] = 0; // currentCell
             rows[rowIndex + 1][colIndex - 0] = 1; // bottomMiddleCell
           } else if (rows[rowIndex + 1][colIndex - 1] === 0) {
-            rows[rowIndex][colIndex] = 0; // currentCell
+            rows[rowIndex - 0][colIndex - 0] = 0; // currentCell
             rows[rowIndex + 1][colIndex - 1] = 1; // bottomLeftCell
           } else if (rows[rowIndex + 1][colIndex + 1] === 0) {
-            rows[rowIndex][colIndex] = 0; // currentCell
+            rows[rowIndex - 0][colIndex - 0] = 0; // currentCell
             rows[rowIndex + 1][colIndex + 1] = 1; // bottomRightCell
           }
         }
