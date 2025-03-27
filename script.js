@@ -38,7 +38,7 @@ main();
 
 //
 function drawBackground() {
-  ctx.fillStyle = "rgba(255,255,255,1)";
+  ctx.fillStyle = "rgba(60,60,60,1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
